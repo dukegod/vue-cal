@@ -4,8 +4,8 @@
       <ul>
         <li class="arrow">❮</li>
         <li class="year-month">
-            <span class="choose-year">年</span>
-            <span class="choose-month">月</span>
+            <span class="choose-year">{{ currentYear}}年</span>
+            <span class="choose-month">{{ currentMonth }}月</span>
         </li>
         <li class="arrow">❯</li>
       </ul>
@@ -13,312 +13,32 @@
       <!-- 星期 -->
     <ul class="weekdays">
 
+      <li>日</li>
       <li>一</li>
       <li>二</li>
       <li>三</li>
       <li>四</li>
       <li>五</li>
       <li>六</li>
-      <li>日</li>
+
     </ul>
       <!-- 日期 -->
     <ul data-v-169781ad="" class="days">
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            1
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            1
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            1
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            1
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            1
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            2
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            3
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            4
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            5
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            6
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            7
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            8
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            9
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            10
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            11
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            12
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            13
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            14
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            15
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            16
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            17
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            18
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            19
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            20
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            21
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            22
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            23
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            24
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            25
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            26
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            27
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            28
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
+
+      <!-- <li data-v-169781ad="">
         <span data-v-169781ad="">
           <span data-v-169781ad="" class="active">
             29
           </span>
         </span>
-      </li>
-      <li data-v-169781ad="">
+      </li> -->
+      <li v-for="(item, index) in days" :key="index">
         <span data-v-169781ad="">
           <span data-v-169781ad="">
-            30
+            {{ item.day.getDate() }}
           </span>
         </span>
       </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            11
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            25
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            26
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            27
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            28
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="" class="active">
-            29
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            30
-          </span>
-        </span>
-      </li>
-      <li data-v-169781ad="">
-        <span data-v-169781ad="">
-          <span data-v-169781ad="">
-            11
-          </span>
-        </span>
-      </li>
-
-
     </ul>
   </div>
 </template>
@@ -328,33 +48,70 @@ export default {
   name: 'CalView',
   data: function() {
     return {
-      currentDay: 1,
-      currentMonth: 1,
-      currentYear: 1970,
-      currentWeek: 1,
+      currentDay: 1,  //
+      currentMonth: 1, // 月
+      currentYear: 1970, // 年
+      currentWeek: 1, // 第几周
       days: [],
       date: '',
     };
   },
   created() {
-    this.initStartEnd()
+    this.init()
   },
   methods: {
-    initStartEnd: function () {
+    init: function () {
+      // 获取现在的日期
       const now = new Date();
-      const startDay = new Date(this.formatDate(now.getFullYear(), now.getMonth(), 1));
-      let endDay;
-      console.log('startDay-----', startDay)
-      startDay.setDate(42);
-      endDay = new Date(this.formatDate(startDay.getFullYear(), startDay.getMonth() + 1, 1));
-      console.log('endDay-----', endDay);
+      const currentYear = now.getFullYear();
+      const currentMonth = now.getMonth() + 1;
+      const currentDay = now.getDate();
 
+
+      // 获取上一个月的开始日期
+      const startDay = new Date(this.formatDate(now.getFullYear(), now.getMonth(), 1));
+      console.log('startDay-----', this.formatDate(now.getFullYear(), now.getMonth(), 1))
+      startDay.setDate(0);
+
+      let endDay;
+      endDay = new Date(this.formatDate(now.getFullYear(), now.getMonth() + 1, 1));
+      console.log('endDay-----', this.formatDate(startDay.getFullYear(), startDay.getMonth() + 1, 1));
+
+      // 获取日期在一个月中的第几天
       this.currentDay = endDay.getDate();
+      // 获取年
       this.currentYear = endDay.getFullYear();
+      // 获取月份
       this.currentMonth = endDay.getMonth() + 1;
+      // 获取星期数
       this.currentWeek = endDay.getDay();
 
 
+      let str = this.formatDate(
+        this.currentYear,
+        this.currentMonth,
+        this.currentDay
+      );
+
+      console.log('---str---', str);
+
+      for (let i = this.currentWeek; i >= 0; i--) {
+        console.log(i)
+        let d = new Date(str);
+        console.log(d.getDate()-i)
+        d.setDate(d.getDate() - i);
+        let dayobject = {};
+        dayobject.day = d;
+        this.days.push(dayobject);
+      }
+
+      for (let i = 1; i < 42 - this.currentWeek; i++) {
+        let d = new Date(str);
+        d.setDate(d.getDate() + i);
+        let dayobject = {};
+        dayobject.day = d;
+        this.days.push(dayobject);
+      }
 
 
     },

@@ -23,11 +23,17 @@
       <!-- 日期 -->
     <ul class="days">
       <li v-for="(dayobject, index) in days" :key="index">
-        <span v-if="dayobject.day.getMonth()+1 != currentMonth" class="other-month">{{ dayobject.day.getDate() }}</span>
+        <span v-if="dayobject.day.getMonth()+1 != currentMonth" class="other-month">
+          {{ dayobject.day.getDate() }}
+        </span>
         <span v-else>
           <span v-if="dayobject.day.getFullYear() == new Date().getFullYear() && dayobject.day.getMonth() == new Date().getMonth() && dayobject.day.getDate() == new Date().getDate()"
-              class="active">{{ dayobject.day.getDate() }}</span>
-          <span v-else>{{ dayobject.day.getDate() }}</span>
+              class="active">
+              {{ dayobject.day.getDate() }}
+          </span>
+          <span v-else>
+            {{ dayobject.day.getDate() }}
+          </span>
         </span>
       </li>
     </ul>
