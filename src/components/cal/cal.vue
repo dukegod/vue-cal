@@ -2,34 +2,323 @@
   <div id="">
     <div class="month">
       <ul>
-          <li class="arrow" @click="pickPre(currentYear,currentMonth)">❮</li>
-          <li class="year-month" @click="pickYear(currentYear,currentMonth)">
-              <span class="choose-year">{{ currentYear }}</span>
-              <span class="choose-month">{{ currentMonth }}月</span>
-          </li>
-          <li class="arrow" @click="pickNext(currentYear,currentMonth)">❯</li>
+        <li class="arrow">❮</li>
+        <li class="year-month">
+            <span class="choose-year">年</span>
+            <span class="choose-month">月</span>
+        </li>
+        <li class="arrow">❯</li>
       </ul>
     </div>
       <!-- 星期 -->
     <ul class="weekdays">
+
       <li>一</li>
       <li>二</li>
       <li>三</li>
       <li>四</li>
       <li>五</li>
-      <li style="color:red">六</li>
-      <li style="color:red">日</li>
+      <li>六</li>
+      <li>日</li>
     </ul>
       <!-- 日期 -->
-    <ul class="days">
-      <li v-for="(dayobject, index) in days" :key="index">
-        <span v-if="dayobject.day.getMonth()+1 != currentMonth" class="other-month">{{ dayobject.day.getDate() }}</span>
-        <span v-else>
-          <span v-if="dayobject.day.getFullYear() == new Date().getFullYear() && dayobject.day.getMonth() == new Date().getMonth() && dayobject.day.getDate() == new Date().getDate()"
-              class="active">{{ dayobject.day.getDate() }}</span>
-          <span v-else>{{ dayobject.day.getDate() }}</span>
+    <ul data-v-169781ad="" class="days">
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            1
+          </span>
         </span>
       </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            1
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            1
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            1
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            1
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            2
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            3
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            4
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            5
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            6
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            7
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            8
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            9
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            10
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            11
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            12
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            13
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            14
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            15
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            16
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            17
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            18
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            19
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            20
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            21
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            22
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            23
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            24
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            25
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            26
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            27
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            28
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="" class="active">
+            29
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            30
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            11
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            25
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            26
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            27
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            28
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="" class="active">
+            29
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            30
+          </span>
+        </span>
+      </li>
+      <li data-v-169781ad="">
+        <span data-v-169781ad="">
+          <span data-v-169781ad="">
+            11
+          </span>
+        </span>
+      </li>
+
+
     </ul>
   </div>
 </template>
@@ -43,70 +332,34 @@ export default {
       currentMonth: 1,
       currentYear: 1970,
       currentWeek: 1,
-      days: []
+      days: [],
+      date: '',
     };
   },
   created() {
-    let that = this;
-    that.initData(null);
+    this.initStartEnd()
   },
   methods: {
-    initData: function(cur) {
-      let that = this;
-      let date;
-      if (cur) {
-        date = new Date(cur);
-      } else {
-        let now = new Date();
-        let d = new Date(that.formatDate(now.getFullYear(), now.getMonth(), 1));
-        d.setDate(35);
-        date = new Date(that.formatDate(d.getFullYear(), d.getMonth() + 1, 1));
-      }
-      that.currentDay = date.getDate();
-      that.currentYear = date.getFullYear();
-      that.currentMonth = date.getMonth() + 1;
-      that.currentWeek = date.getDay();
-      if (that.currentWeek == 0) {
-        that.currentWeek = 7;
-      }
-      let str = that.formatDate(
-        that.currentYear,
-        that.currentMonth,
-        that.currentDay
-      );
-      that.days.length = 0;
+    initStartEnd: function () {
+      const now = new Date();
+      const startDay = new Date(this.formatDate(now.getFullYear(), now.getMonth(), 1));
+      let endDay;
+      console.log('startDay-----', startDay)
+      startDay.setDate(42);
+      endDay = new Date(this.formatDate(startDay.getFullYear(), startDay.getMonth() + 1, 1));
+      console.log('endDay-----', endDay);
 
-      for (let i = that.currentWeek - 1; i >= 0; i--) {
-        let d = new Date(str);
-        d.setDate(d.getDate() - i);
-        let dayobject = {};
-        dayobject.day = d;
-        that.days.push(dayobject);
-      }
-      //其他周
-      for (let i = 1; i <= 35 - that.currentWeek; i++) {
-        let d = new Date(str);
-        d.setDate(d.getDate() + i);
-        let dayobject = {};
-        dayobject.day = d;
-        that.days.push(dayobject);
-      }
+      this.currentDay = endDay.getDate();
+      this.currentYear = endDay.getFullYear();
+      this.currentMonth = endDay.getMonth() + 1;
+      this.currentWeek = endDay.getDay();
+
+
+
+
     },
-    pickPre: function(year, month) {
-      let that = this;
-      let d = new Date(that.formatDate(year, month, 1));
-      d.setDate(0);
-      that.initData(that.formatDate(d.getFullYear(), d.getMonth() + 1, 1));
-    },
-    pickNext: function(year, month) {
-      let that = this;
-      let d = new Date(that.formatDate(year, month, 1));
-      d.setDate(35);
-      that.initData(that.formatDate(d.getFullYear(), d.getMonth() + 1, 1));
-    },
-    pickYear: function(year, month) {
-      alert(year + ',' + month);
-    },
+
+
     // 返回 类似 2016-01-02 格式的字符串
     formatDate: function(year, month, day) {
       let y = year;
@@ -191,8 +444,7 @@ export default {
 
 .weekdays {
   margin: 0;
-  color: #ffffff;
-  /* background: #a4a7b0; */
+  background: #a4a7b0;
   width: 96.6%;
   margin-top: 26px;
   height: 34px;
@@ -203,8 +455,9 @@ export default {
 .weekdays li {
   display: inline-block;
   text-align: center;
-  color: #11616f;
-  font-size: 14px;
+  /* color: #11616f; */
+  color: #000;
+  font-size: 20px;
   font-weight: 100;
   width: 12.7%;
 }
@@ -219,8 +472,8 @@ export default {
 
 .days li {
   list-style-type: none;
-  display: inline-block;
-  width: 14.2%;
+  /* display: inline-block; */
+  width: 14.285%;
   text-align: center;
   padding-bottom: 3px;
   padding-top: 7px;
@@ -236,7 +489,7 @@ export default {
 }
 
 .days li .other-month {
-  padding: 5px;
+  /* padding: 5px; */
   color: #84a8ae;
 }
 </style>
