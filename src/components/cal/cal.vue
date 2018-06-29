@@ -1,43 +1,36 @@
 <template>
   <div id="">
-      <!-- 年份 月份 -->
-      <div class="month">
-        <ul>
-            <!--点击会触发pickpre函数，重新刷新当前日期 @click(vue v-on:click缩写) -->
-            <li class="arrow" @click="pickPre(currentYear,currentMonth)">❮</li>
-            <li class="year-month" @click="pickYear(currentYear,currentMonth)">
-                <span class="choose-year">{{ currentYear }}</span>
-                <span class="choose-month">{{ currentMonth }}月</span>
-            </li>
-            <li class="arrow" @click="pickNext(currentYear,currentMonth)">❯</li>
-        </ul>
-      </div>
-      <!-- 星期 -->
-      <ul class="weekdays">
-        <li>一</li>
-        <li>二</li>
-        <li>三</li>
-        <li>四</li>
-        <li>五</li>
-        <li style="color:red">六</li>
-        <li style="color:red">日</li>
-      </ul>
-      <!-- 日期 -->
-      <ul class="days">
-          <!-- 核心 v-for循环 每一次循环用<li>标签创建一天 -->
-          <li v-for="(dayobject, index) in days" :key="index">
-              <!--本月-->
-              <!--如果不是本月  改变类名加灰色-->
-              <span v-if="dayobject.day.getMonth()+1 != currentMonth" class="other-month">{{ dayobject.day.getDate() }}</span>
-              <!--如果是本月  还需要判断是不是这一天-->
-              <span v-else>
-                  <!--今天  同年同月同日-->
-                  <span v-if="dayobject.day.getFullYear() == new Date().getFullYear() && dayobject.day.getMonth() == new Date().getMonth() && dayobject.day.getDate() == new Date().getDate()"
-                      class="active">{{ dayobject.day.getDate() }}</span>
-                  <span v-else>{{ dayobject.day.getDate() }}</span>
-              </span>
+    <div class="month">
+      <ul>
+          <li class="arrow" @click="pickPre(currentYear,currentMonth)">❮</li>
+          <li class="year-month" @click="pickYear(currentYear,currentMonth)">
+              <span class="choose-year">{{ currentYear }}</span>
+              <span class="choose-month">{{ currentMonth }}月</span>
           </li>
+          <li class="arrow" @click="pickNext(currentYear,currentMonth)">❯</li>
       </ul>
+    </div>
+      <!-- 星期 -->
+    <ul class="weekdays">
+      <li>一</li>
+      <li>二</li>
+      <li>三</li>
+      <li>四</li>
+      <li>五</li>
+      <li style="color:red">六</li>
+      <li style="color:red">日</li>
+    </ul>
+      <!-- 日期 -->
+    <ul class="days">
+      <li v-for="(dayobject, index) in days" :key="index">
+        <span v-if="dayobject.day.getMonth()+1 != currentMonth" class="other-month">{{ dayobject.day.getDate() }}</span>
+        <span v-else>
+          <span v-if="dayobject.day.getFullYear() == new Date().getFullYear() && dayobject.day.getMonth() == new Date().getMonth() && dayobject.day.getDate() == new Date().getDate()"
+              class="active">{{ dayobject.day.getDate() }}</span>
+          <span v-else>{{ dayobject.day.getDate() }}</span>
+        </span>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -60,7 +53,6 @@ export default {
   methods: {
     initData: function(cur) {
       let that = this;
-      let leftcount = 0; //存放剩余数量
       let date;
       if (cur) {
         date = new Date(cur);
@@ -73,7 +65,7 @@ export default {
       that.currentDay = date.getDate();
       that.currentYear = date.getFullYear();
       that.currentMonth = date.getMonth() + 1;
-      that.currentWeek = date.getDay(); // 1...6,0
+      that.currentWeek = date.getDay();
       if (that.currentWeek == 0) {
         that.currentWeek = 7;
       }
@@ -83,14 +75,13 @@ export default {
         that.currentDay
       );
       that.days.length = 0;
-      // 今天是周日，放在第一行第7个位置，前面6个
-      //初始化本周
+
       for (let i = that.currentWeek - 1; i >= 0; i--) {
         let d = new Date(str);
         d.setDate(d.getDate() - i);
-        let dayobject = {}; //用一个对象包装Date对象  以便为以后预定功能添加属性
+        let dayobject = {};
         dayobject.day = d;
-        that.days.push(dayobject); //将日期放入data 中的days数组 供页面渲染使用
+        that.days.push(dayobject);
       }
       //其他周
       for (let i = 1; i <= 35 - that.currentWeek; i++) {
@@ -136,9 +127,8 @@ export default {
 }
 
 /*日历*/
-
 #calendar {
-  width: 98%;
+  width: 100%;
   border: 2px solid #a4a7b0;
   height: 335px;
   margin-left: 0.5%;
@@ -184,12 +174,10 @@ export default {
 }
 
 .arrow1 {
-  /* background: url(left.png) no-repeat 0 0 /100% 100%; */
   margin-left: 44px;
 }
 
 .arrow2 {
-  /* background: url(right.png) no-repeat 0 0 /100% 100%; */
   margin-right: 44px;
 }
 
@@ -237,7 +225,6 @@ export default {
   padding-bottom: 3px;
   padding-top: 7px;
   font-size: 12.78px;
-  /* color: rgb(14, 220, 235); */
   font-weight: 200;
 }
 
@@ -246,18 +233,6 @@ export default {
   width: 27px;
   line-height: 29.5px;
   display: inline-block;
-}
-
-.days li .class-30 {
-  /* background: url(bg_30.png) no-repeat 0 0 /100% 100%; */
-}
-
-.days li .class-60 {
-  /* background: url(bg_60.png) no-repeat 0 0 /100% 100%; */
-}
-
-.days li .class-3060 {
-  /* background: url(bg_3060.png) no-repeat 0 0 /100% 100%; */
 }
 
 .days li .other-month {

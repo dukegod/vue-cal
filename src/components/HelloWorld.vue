@@ -11,7 +11,7 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
-      msg: 'Welcome to Cal App',
+      msg: '',
     };
   },
 };
