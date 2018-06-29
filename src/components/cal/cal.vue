@@ -66,6 +66,7 @@ export default {
       const currentYear = now.getFullYear();
       const currentMonth = now.getMonth() + 1;
       const currentDay = now.getDate();
+      const currentFormat = this.formatDate(currentYear, currentMonth, currentDay)
 
 
       // 获取上一个月的开始日期
@@ -92,7 +93,6 @@ export default {
         this.currentMonth,
         this.currentDay
       );
-
       console.log('---str---', str);
 
       for (let i = this.currentWeek; i >= 0; i--) {
