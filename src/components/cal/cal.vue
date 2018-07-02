@@ -68,6 +68,8 @@ export default {
       const currentDay = now.getDate();
       const currentFormat = this.formatDate(currentYear, currentMonth, currentDay)
 
+      console.log('now', new Date())
+
 
       // 获取上一个月的开始日期
       const startDay = new Date(this.formatDate(now.getFullYear(), now.getMonth(), 1));
@@ -100,7 +102,14 @@ export default {
         let d = new Date(str);
         console.log(d.getDate()-i)
         d.setDate(d.getDate() - i);
-        let dayobject = {};
+        let dayobject = {
+          date: '',
+          isToday: false,
+          color: '',
+          isDayAfter: false,
+          isDayBefore: true
+        };
+        console.log('---currentWeek', d)
         dayobject.day = d;
         this.days.push(dayobject);
       }
@@ -108,12 +117,17 @@ export default {
       for (let i = 1; i < 42 - this.currentWeek; i++) {
         let d = new Date(str);
         d.setDate(d.getDate() + i);
-        let dayobject = {};
+        let dayobject = {
+          date: '',
+          isToday: false,
+          color: '',
+          isDayAfter: false,
+          isDayBefore: true
+        };
+        console.log('---d---', d*1);
         dayobject.day = d;
         this.days.push(dayobject);
       }
-
-
     },
 
 
