@@ -1,7 +1,7 @@
 <template>
-  <div id="">
+  <div id="" v-finger:swipe="swipe">
     <!-- 月显示日期 -->
-    <div class="month" v-show="false">
+    <div class="month" v-show="isMonth">
       <ul>
         <li class="arrow" @click="pickPreMonth">❮</li>
         <li class="year-month">
@@ -13,7 +13,7 @@
     </div>
 
     <!-- 周显示日期 -->
-    <div class="month">
+    <div class="month" v-show="!isMonth">
       <ul>
         <li class="arrow" @click="pickWeekPre">❮</li>
         <li class="year-month">
@@ -23,6 +23,7 @@
         <li class="arrow" @click="pickWeekNext">❯</li>
       </ul>
     </div>
+
       <!-- 星期 -->
     <ul class="weekdays">
       <li>日</li>
@@ -33,20 +34,22 @@
       <li>五</li>
       <li>六</li>
     </ul>
+
       <!-- 月份格式显示日期 -->
-    <ul v-show="false" class="days">
-      <li v-for="(item, index) in days" :key="index">
-        <div :class="item.isToday? 'active': ''">
+    <ul v-show="isMonth" class="days">
+      <li v-for="(item, index) in days" :key="index" @click="pickDate(item.date)">
+        <div :class="item.isToday? 'active': ''" :style="item.isDayAfter? 'color:white; background-color: black': ''">
           <span>
             {{ item.date.getDate() }}
           </span>
         </div>
       </li>
     </ul>
+
     <!-- 周格式的日期显示 -->
-    <ul v-show="true" class="weeks">
-      <li v-for="(item, index) in weekDays" :key="index">
-        <div :class="item.isToday? 'active': ''">
+    <ul v-show="!isMonth" class="weeks">
+      <li v-for="(item, index) in weekDays" :key="index" @click="pickDate(item.date)">
+        <div :class="item.isToday? 'active': ''" :style="item.isDayAfter? 'color:white; background-color: black': ''">
           <span>
             {{ item.date.getDate() }}
           </span>
@@ -57,6 +60,14 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import AlloyFinger from 'alloyfinger'
+import AlloyFingerPlugin from 'alloyfinger/vue/alloy_finger.vue'
+Vue.use(AlloyFingerPlugin, {
+    AlloyFinger
+})
+
+
 export default {
   name: 'CalView',
   data: function() {
@@ -67,12 +78,15 @@ export default {
       currentWeek: 1, // 第几周
       days: [],
       weekDays: [],
-      date: ''
+      date: '',
+      isMonth: true,
     };
   },
   created() {
-    this.initWeeks();
+    // this.initWeeks();
+    // this.initMonth();
   },
+
   methods: {
     initMonth: function(date) {
       // debugger
@@ -171,7 +185,6 @@ export default {
     initWeeks: function(date) {
       let now;
       if (date) {
-
         now = new Date(date);
       } else {
         now = new Date();
@@ -213,7 +226,6 @@ export default {
           dayobject.date = d;
         }
         this.weekDays.push(dayobject);
-
       }
       for (let i = 1; i < 7 - this.currentWeek; i += 1) {
         const d = new Date(str);
@@ -223,8 +235,8 @@ export default {
           date: '',
           isToday: false,
           color: '',
-          isDayAfter: false,
-          isDayBefore: true
+          isDayAfter: true,
+          isDayBefore: false
         };
         if (
           d.getFullYear() === new Date().getFullYear() &&
@@ -280,7 +292,37 @@ export default {
       d.setDate(42);
       this.days = [];
       this.initMonth(this.formatDate(d.getFullYear(), d.getMonth() + 1, 1));
-    }
+    },
+
+    pickDate(e) {
+      alert(e);
+    },
+
+
+    swipe: function(evt) {
+      console.log('swipe' + evt.direction);
+      if (evt && evt.direction === 'left') {
+        console.log('向右边滑动，加载上一个月数据')
+        this.pickPreMonth()
+      } else if (evt && evt.direction === 'right') {
+        console.log('向左边滑动，加载下一个月');
+        this.pickNextMonth()
+      } else if (evt && evt.direction === 'down') {
+        console.log('向down边滑动，加载下一个月');
+        this.isMonth = false;
+        this.days = [];
+        this.initWeeks();
+      } else {
+        console.log(this);
+        console.log('向up滑动，加载下一个月');
+        this.isMonth = true;
+        this.days = [];
+        this.initWeeks()
+      }
+
+
+    },
+
   }
 };
 </script>
@@ -388,7 +430,6 @@ export default {
   width: 14.285%;
   padding-bottom: 3px;
   padding-top: 7px;
-  font-size: 12.78px;
   font-weight: 200;
 }
 
@@ -408,8 +449,10 @@ export default {
   font-size: 20px;
 }
 
+.days li div span,
 .days li div span {
   color: inherit;
+  font-size: 20px;
 }
 
 .days li .other-month {

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <CalView/>
-    <HelloWorld/>
+    <HelloWorld :msg="date"/>
   </div>
 </template>
 
@@ -13,6 +13,11 @@ console.log(CalView)
 
 export default {
   name: 'App',
+  data() {
+    return {
+      date: ''
+    }
+  },
   components: {
     HelloWorld,
     CalView
