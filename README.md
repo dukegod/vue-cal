@@ -23,3 +23,10 @@ npm run unit
 # run all tests
 npm test
 ```
+
+打开周显示格式：
+
+```js
+isShow: false
+initWeek
+```

@@ -84,7 +84,7 @@ export default {
   },
   created() {
     // this.initWeeks();
-    // this.initMonth();
+    this.initMonth();
   },
 
   methods: {
@@ -319,8 +319,6 @@ export default {
         this.days = [];
         this.initWeeks()
       }
-
-
     },
 
   }
